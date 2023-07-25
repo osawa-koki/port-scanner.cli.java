@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("args4j:args4j:2.33")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
