@@ -1,19 +1,21 @@
 package org.example;
 
+import org.kohsuke.args4j.CmdLineException;
+import org.kohsuke.args4j.CmdLineParser;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-  public static void main(String[] args) {
-    // Press Opt+Enter with your caret at the highlighted text to see how
-    // IntelliJ IDEA suggests fixing it.
-    System.out.printf("Hello and welcome!");
+  public static void main(String[] args) throws CmdLineException {
 
-    // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-    for (int i = 1; i <= 5; i++) {
+    Options options = new Options();
+    CmdLineParser parser = new CmdLineParser(options);
+    parser.parseArgument(args);
 
-      // Press Ctrl+D to start debugging your code. We have set one breakpoint
-      // for you, but you can always add more by pressing Cmd+F8.
-      System.out.println("i = " + i);
-    }
+    System.out.println("host: " + options.host);
+    System.out.println("start: " + options.start);
+    System.out.println("end: " + options.end);
+    System.out.println("thread: " + options.thread);
+    System.out.println("wait: " + options.wait);
   }
 }
