@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+env:
+  HOST: github.com
+  START: 1
+  END: 100
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -22,6 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build -t port-scanner-cli-java .
+        run: docker build -t port-scanner-cli-java . --build-arg host=$HOST --build-arg start=$START --build-arg end=$END
       - name: Exec java program
         run: docker run --rm --name port-scanner-cli-java port-scanner-cli-java
