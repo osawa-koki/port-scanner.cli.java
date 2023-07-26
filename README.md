@@ -2,6 +2,10 @@
 
 🫣🫣🫣 Javaでポートスキャナーを作成する！  
 
+![成果物(GitHub Actions)](docs/img/fruit.github-actions.gif)  
+
+![成果物(ローカル)](docs/img/fruit.local.gif)  
+
 ## 実行方法
 
 ```shell
